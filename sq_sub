@@ -1,0 +1,83 @@
+#!/bin/bash --login
+
+# SGE options start with a '#$'
+#$ -S /bin/bash
+
+# run in current working directory
+#$ -cwd
+
+# load latest GROMACS module
+module load apps/intel-18.0/towhee/8.2.0
+module load apps/intel-17.0/gromacs/2018.4/double
+module load apps/binapps/anaconda3/2019.07
+
+
+#from md_0 to mc_1
+# hold job till previous job end
+
+##$ -hold_jid correct_md0
+
+cp md_0/output_npt.gro .
+cp md_0/field.top .
+
+ipython gro2coord_accurate.py
+ipython update_input.py
+
+# MC/MD coupling N cycle
+
+# define simulation name
+#$ -N long_sq_correct
+
+for iteration in $(seq 50);
+
+do 
+
+#MC--
+
+towhee > towhee_output
+
+mkdir mc_"$iteration"
+
+mv towhee_output mc_"$iteration"
+cp box* mc_"$iteration"
+
+# python convert MC to MD
+
+ipython pdb2gro.py
+ipython update_top.py
+
+#MD--
+
+# set parallel environment and number of cores
+#$ -pe smp.pe 12
+
+# Inform software how many cores to use
+export OMP_NUM_THREADS=$NSLOTS
+
+# compile .tpr file equilibration
+gmx_d grompp -p field.top -c input.gro -f nvt.mdp -o input_nvt.tpr
+
+# equilibratrion simulation
+gmx_d mdrun -s input_nvt.tpr -deffnm output_nvt
+
+# compile .tpr file equilibration
+gmx_d grompp -p field.top -c output_nvt.gro -f npt.mdp -o input_npt.tpr -maxwarn 1
+
+# equilibratrion simulation
+gmx_d mdrun -s input_npt.tpr -deffnm output_npt
+
+mkdir md_"$iteration"
+
+# python convert MD to MC
+
+ipython gro2coord_accurate.py
+ipython update_input.py
+
+mv output_* *.tpr md_"$iteration"
+
+rm box* 
+
+done
+
+
+# End of jobscript
