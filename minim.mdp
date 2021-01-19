@@ -1,0 +1,52 @@
+; can define flexible water instead of rigid here, or add restraints
+define                   = -DPOSRES
+
+; default leap frog algorithm with time step
+integrator               = steep
+nsteps                   = 20000
+emstep			 = 0.01
+emtol			 = 2
+
+; frequency of writing 
+; coordinates to trajectory file
+nstxout                  = 1000
+; velocities to trajectory file
+nstvout                  = 1000
+; energies to log file
+nstlog                   = 1000
+; energies to energy file
+nstenergy                = 1000
+; frequency for calculating energies
+nstcalcenergy            = 1000
+; frequency for writing coordinates to compressed trajectory
+nstxtcout                = 1000
+
+; groups written to energy file
+energygrps               = 1GRO SOL
+
+; frequency of neighbour list updating and neighbour list type and cutoff
+cutoff_scheme            = verlet
+ns-type                  = grid
+verlet-buffer-tolerance  = 0.001
+
+; wall on energy minimisation and pbc
+pbc			= xyz
+periodic-molecules	= yes
+
+; electrostatics and cut off
+ewald-geometry		 = 3d
+coulombtype              = PME
+rlist			 = 1.2
+rcoulomb                 = 1.2
+
+; cut off for VDWs interactions
+rvdw                     = 1.2
+rvdw-switch              = 1.0
+vdwtype                  = cut-off
+vdw_modifier             = potential-switch
+
+; thermostat type, target temp. and relaxation times for each species
+tcoupl                   = nose-hoover
+tc-grps                  = System  
+tau-t                    = 1.0     
+ref-t                    = 300.00

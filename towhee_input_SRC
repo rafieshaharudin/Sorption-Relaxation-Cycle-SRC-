@@ -1,0 +1,6021 @@
+inputformat
+'Towhee'
+ensemble
+'uvt'
+temperature
+300.00d0
+nmolty
+2
+nmolectyp
+100000 4    #need to ensure the size is big enough after many cycles
+chempot
+-5000.00d0 0.00d0 #(?% RH)
+numboxes
+1
+stepstyle
+'moves'
+nstep
+100000
+controlstyle
+'equilibration'
+runoutput
+'blocks'
+linit
+T
+initboxtype
+'dimensions'
+initstyle
+'coords' 'coords'
+initlattice
+'none' 'none'
+initmol
+297 4
+inix iniy iniz #need to ensure the size is big enough after many cycles
+20    20    20   
+hmatrix
+ 31.6668  0.00  0.00
+0.00 33.8656  0.00
+0.00  0.00   26.8496
+pmuvtcbswap
+0.50d0
+	  pmuvtcbmt
+	  1.0d0 0.0d0
+pmtracm
+0.75d0
+          pmtcmt          
+          1.0d0 0.0d0
+          rmtrac
+          0.5d0 
+          tatrac
+          0.5d0
+pmrotate
+1.0d0
+          pmromt  
+          1.0d0 0.0d0
+          rmrot
+          0.05d0
+          tarot
+          0.5d0
+cbmc_analysis
+'full'
+cbmc_formulation
+'Martin and Frischknecht 2006'
+cbmc_setting_style
+'explicit'
+ffnumber
+2
+ff_filename
+/mnt/iusers01/ceas01/mjki4ms3/towhee_ff/src2_towhee_ff_TIP3P-EW
+/mnt/iusers01/ceas01/mjki4ms3/towhee_ff/towhee_ff_GO
+classical_potential
+'Lennard-Jones'
+classical_mixrule
+'Lorentz-Berthelot'
+lshift
+F
+ltailc
+T
+rmin  
+1.0d0 
+rcut  
+10.0d0
+rcutin 
+12.0d0 		      # lower chempot system will swell, the cut-off is fine. for shrinking system need to reduce cut-off distance to prevent error mid cycles
+electrostatic_form
+'coulomb'
+coulombstyle
+'ewald_fixed_kmax'    # using this instead of cut-off since kmax migh exceed maximum value after many cycles
+kalp
+5.6d0
+kmax		      # need to ensure this value is suitable for system we are working with (recalculate cut-off distance)	
+5
+dielect
+1.0d0
+#water
+input_style
+'basic connectivity map'
+nunit
+3
+nmaxcbmc
+3
+lpdbnames
+T
+forcefield
+'TIP3P-EW'
+charge_assignment
+'manual'
+unit atomname   charge
+1    'OW'        -0.830
+pdbname aminonum aminoshort
+'OW'      1        'SOL'
+vibration
+2
+2 3
+improper torsion
+0
+unit atomname	charge
+2    'HW'	0.415
+pdbname aminonum aminoshort
+'HW1'      2        'SOL'
+vibration
+1
+1
+improper torsion
+0
+unit atomname	charge
+3    'HW'	0.415
+pdbname aminonum aminoshort
+'HW2'      3        'SOL'
+vibration
+1
+1
+improper torsion
+0
+#GO1
+input_style
+'basic connectivity map'
+nunit
+         631
+nmaxcbmc
+         631
+lpdbnames
+ .true.
+forcefield
+'GO'
+charge_assignment
+'manual'
+unit ntype qqatom
+    1 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'     1  GRO
+vibration
+     4
+     2     6   368
+   555
+improper torsion
+ 0
+unit ntype qqatom
+    2 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'     2  GRO
+vibration
+     3
+     1     3    49
+improper torsion
+ 0
+unit ntype qqatom
+    3 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'     3  GRO
+vibration
+     3
+     2     4    52
+improper torsion
+ 0
+unit ntype qqatom
+    4 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'     4  GRO
+vibration
+     3
+     3     7    53
+improper torsion
+ 0
+unit ntype qqatom
+    5 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'     5  GRO
+vibration
+     4
+     6    10   372
+   497
+improper torsion
+ 0
+unit ntype qqatom
+    6 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'     6  GRO
+vibration
+     4
+     1     5     7
+   472
+improper torsion
+ 0
+unit ntype qqatom
+    7 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'     7  GRO
+vibration
+     4
+     4     6     8
+   474
+improper torsion
+ 0
+unit ntype qqatom
+    8 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'     8  GRO
+vibration
+     3
+     7    11    57
+improper torsion
+ 0
+unit ntype qqatom
+    9 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'     9  GRO
+vibration
+     3
+    10    14   376
+improper torsion
+ 0
+unit ntype qqatom
+   10 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    10  GRO
+vibration
+     4
+     5     9    11
+   533
+improper torsion
+ 0
+unit ntype qqatom
+   11 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    11  GRO
+vibration
+     4
+     8    10    12
+   533
+improper torsion
+ 0
+unit ntype qqatom
+   12 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    12  GRO
+vibration
+     4
+    11    15    61
+   503
+improper torsion
+ 0
+unit ntype qqatom
+   13 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    13  GRO
+vibration
+     3
+    14    18   380
+improper torsion
+ 0
+unit ntype qqatom
+   14 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    14  GRO
+vibration
+     3
+     9    13    15
+improper torsion
+ 0
+unit ntype qqatom
+   15 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    15  GRO
+vibration
+     3
+    12    14    16
+improper torsion
+ 0
+unit ntype qqatom
+   16 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    16  GRO
+vibration
+     3
+    15    19    65
+improper torsion
+ 0
+unit ntype qqatom
+   17 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    17  GRO
+vibration
+     3
+    18    22   384
+improper torsion
+ 0
+unit ntype qqatom
+   18 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    18  GRO
+vibration
+     4
+    13    17    19
+   598
+improper torsion
+ 0
+unit ntype qqatom
+   19 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    19  GRO
+vibration
+     4
+    16    18    20
+   596
+improper torsion
+ 0
+unit ntype qqatom
+   20 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    20  GRO
+vibration
+     4
+    19    23    69
+   480
+improper torsion
+ 0
+unit ntype qqatom
+   21 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    21  GRO
+vibration
+     4
+    22    26   388
+   618
+improper torsion
+ 0
+unit ntype qqatom
+   22 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    22  GRO
+vibration
+     3
+    17    21    23
+improper torsion
+ 0
+unit ntype qqatom
+   23 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    23  GRO
+vibration
+     3
+    20    22    24
+improper torsion
+ 0
+unit ntype qqatom
+   24 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    24  GRO
+vibration
+     4
+    23    27    73
+   515
+improper torsion
+ 0
+unit ntype qqatom
+   25 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    25  GRO
+vibration
+     3
+    26    30   392
+improper torsion
+ 0
+unit ntype qqatom
+   26 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    26  GRO
+vibration
+     3
+    21    25    27
+improper torsion
+ 0
+unit ntype qqatom
+   27 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    27  GRO
+vibration
+     3
+    24    26    28
+improper torsion
+ 0
+unit ntype qqatom
+   28 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    28  GRO
+vibration
+     3
+    27    31    77
+improper torsion
+ 0
+unit ntype qqatom
+   29 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    29  GRO
+vibration
+     3
+    30    34   396
+improper torsion
+ 0
+unit ntype qqatom
+   30 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    30  GRO
+vibration
+     3
+    25    29    31
+improper torsion
+ 0
+unit ntype qqatom
+   31 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    31  GRO
+vibration
+     4
+    28    30    32
+   447
+improper torsion
+ 0
+unit ntype qqatom
+   32 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    32  GRO
+vibration
+     4
+    31    35    81
+   449
+improper torsion
+ 0
+unit ntype qqatom
+   33 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    33  GRO
+vibration
+     3
+    34    38   400
+improper torsion
+ 0
+unit ntype qqatom
+   34 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    34  GRO
+vibration
+     3
+    29    33    35
+improper torsion
+ 0
+unit ntype qqatom
+   35 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    35  GRO
+vibration
+     3
+    32    34    36
+improper torsion
+ 0
+unit ntype qqatom
+   36 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    36  GRO
+vibration
+     3
+    35    39    85
+improper torsion
+ 0
+unit ntype qqatom
+   37 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    37  GRO
+vibration
+     3
+    38    42   404
+improper torsion
+ 0
+unit ntype qqatom
+   38 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    38  GRO
+vibration
+     4
+    33    37    39
+   582
+improper torsion
+ 0
+unit ntype qqatom
+   39 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    39  GRO
+vibration
+     4
+    36    38    40
+   582
+improper torsion
+ 0
+unit ntype qqatom
+   40 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    40  GRO
+vibration
+     4
+    39    43    89
+   499
+improper torsion
+ 0
+unit ntype qqatom
+   41 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    41  GRO
+vibration
+     3
+    42    46   408
+improper torsion
+ 0
+unit ntype qqatom
+   42 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    42  GRO
+vibration
+     3
+    37    41    43
+improper torsion
+ 0
+unit ntype qqatom
+   43 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    43  GRO
+vibration
+     4
+    40    42    44
+   603
+improper torsion
+ 0
+unit ntype qqatom
+   44 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    44  GRO
+vibration
+     4
+    43    47    93
+   603
+improper torsion
+ 0
+unit ntype qqatom
+   45 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    45  GRO
+vibration
+     3
+    46    50   412
+improper torsion
+ 0
+unit ntype qqatom
+   46 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    46  GRO
+vibration
+     3
+    41    45    47
+improper torsion
+ 0
+unit ntype qqatom
+   47 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    47  GRO
+vibration
+     3
+    44    46    48
+improper torsion
+ 0
+unit ntype qqatom
+   48 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    48  GRO
+vibration
+     4
+    47    51    97
+   622
+improper torsion
+ 0
+unit ntype qqatom
+   49 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    49  GRO
+vibration
+     4
+     2    50   416
+   554
+improper torsion
+ 0
+unit ntype qqatom
+   50 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    50  GRO
+vibration
+     4
+    45    49    51
+   554
+improper torsion
+ 0
+unit ntype qqatom
+   51 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    51  GRO
+vibration
+     3
+    48    50    52
+improper torsion
+ 0
+unit ntype qqatom
+   52 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    52  GRO
+vibration
+     3
+     3    51   101
+improper torsion
+ 0
+unit ntype qqatom
+   53 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    53  GRO
+vibration
+     3
+     4    54    58
+improper torsion
+ 0
+unit ntype qqatom
+   54 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    54  GRO
+vibration
+     3
+    53    55   101
+improper torsion
+ 0
+unit ntype qqatom
+   55 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    55  GRO
+vibration
+     3
+    54    56   104
+improper torsion
+ 0
+unit ntype qqatom
+   56 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    56  GRO
+vibration
+     4
+    55    59   105
+   452
+improper torsion
+ 0
+unit ntype qqatom
+   57 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    57  GRO
+vibration
+     3
+     8    58    62
+improper torsion
+ 0
+unit ntype qqatom
+   58 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    58  GRO
+vibration
+     3
+    53    57    59
+improper torsion
+ 0
+unit ntype qqatom
+   59 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    59  GRO
+vibration
+     3
+    56    58    60
+improper torsion
+ 0
+unit ntype qqatom
+   60 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    60  GRO
+vibration
+     4
+    59    63   109
+   573
+improper torsion
+ 0
+unit ntype qqatom
+   61 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    61  GRO
+vibration
+     4
+    12    62    66
+   503
+improper torsion
+ 0
+unit ntype qqatom
+   62 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    62  GRO
+vibration
+     3
+    57    61    63
+improper torsion
+ 0
+unit ntype qqatom
+   63 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    63  GRO
+vibration
+     4
+    60    62    64
+   573
+improper torsion
+ 0
+unit ntype qqatom
+   64 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    64  GRO
+vibration
+     3
+    63    67   113
+improper torsion
+ 0
+unit ntype qqatom
+   65 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    65  GRO
+vibration
+     3
+    16    66    70
+improper torsion
+ 0
+unit ntype qqatom
+   66 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    66  GRO
+vibration
+     3
+    61    65    67
+improper torsion
+ 0
+unit ntype qqatom
+   67 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    67  GRO
+vibration
+     4
+    64    66    68
+   463
+improper torsion
+ 0
+unit ntype qqatom
+   68 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    68  GRO
+vibration
+     4
+    67    71   117
+   463
+improper torsion
+ 0
+unit ntype qqatom
+   69 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    69  GRO
+vibration
+     4
+    20    70    74
+   482
+improper torsion
+ 0
+unit ntype qqatom
+   70 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    70  GRO
+vibration
+     4
+    65    69    71
+   527
+improper torsion
+ 0
+unit ntype qqatom
+   71 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    71  GRO
+vibration
+     4
+    68    70    72
+   527
+improper torsion
+ 0
+unit ntype qqatom
+   72 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    72  GRO
+vibration
+     4
+    71    75   121
+   429
+improper torsion
+ 0
+unit ntype qqatom
+   73 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    73  GRO
+vibration
+     4
+    24    74    78
+   517
+improper torsion
+ 0
+unit ntype qqatom
+   74 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    74  GRO
+vibration
+     3
+    69    73    75
+improper torsion
+ 0
+unit ntype qqatom
+   75 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    75  GRO
+vibration
+     3
+    72    74    76
+improper torsion
+ 0
+unit ntype qqatom
+   76 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    76  GRO
+vibration
+     4
+    75    79   125
+   422
+improper torsion
+ 0
+unit ntype qqatom
+   77 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    77  GRO
+vibration
+     3
+    28    78    82
+improper torsion
+ 0
+unit ntype qqatom
+   78 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    78  GRO
+vibration
+     3
+    73    77    79
+improper torsion
+ 0
+unit ntype qqatom
+   79 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    79  GRO
+vibration
+     3
+    76    78    80
+improper torsion
+ 0
+unit ntype qqatom
+   80 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    80  GRO
+vibration
+     3
+    79    83   129
+improper torsion
+ 0
+unit ntype qqatom
+   81 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    81  GRO
+vibration
+     3
+    32    82    86
+improper torsion
+ 0
+unit ntype qqatom
+   82 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    82  GRO
+vibration
+     4
+    77    81    83
+   552
+improper torsion
+ 0
+unit ntype qqatom
+   83 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    83  GRO
+vibration
+     4
+    80    82    84
+   552
+improper torsion
+ 0
+unit ntype qqatom
+   84 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    84  GRO
+vibration
+     3
+    83    87   133
+improper torsion
+ 0
+unit ntype qqatom
+   85 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    85  GRO
+vibration
+     4
+    36    86    90
+   546
+improper torsion
+ 0
+unit ntype qqatom
+   86 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    86  GRO
+vibration
+     3
+    81    85    87
+improper torsion
+ 0
+unit ntype qqatom
+   87 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    87  GRO
+vibration
+     4
+    84    86    88
+   433
+improper torsion
+ 0
+unit ntype qqatom
+   88 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    88  GRO
+vibration
+     4
+    87    91   137
+   435
+improper torsion
+ 0
+unit ntype qqatom
+   89 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    89  GRO
+vibration
+     4
+    40    90    94
+   501
+improper torsion
+ 0
+unit ntype qqatom
+   90 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    90  GRO
+vibration
+     4
+    85    89    91
+   546
+improper torsion
+ 0
+unit ntype qqatom
+   91 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    91  GRO
+vibration
+     3
+    88    90    92
+improper torsion
+ 0
+unit ntype qqatom
+   92 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    92  GRO
+vibration
+     4
+    91    95   141
+   595
+improper torsion
+ 0
+unit ntype qqatom
+   93 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    93  GRO
+vibration
+     3
+    44    94    98
+improper torsion
+ 0
+unit ntype qqatom
+   94 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    94  GRO
+vibration
+     4
+    89    93    95
+   574
+improper torsion
+ 0
+unit ntype qqatom
+   95 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    95  GRO
+vibration
+     4
+    92    94    96
+   574
+improper torsion
+ 0
+unit ntype qqatom
+   96 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'    96  GRO
+vibration
+     3
+    95    99   145
+improper torsion
+ 0
+unit ntype qqatom
+   97 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'    97  GRO
+vibration
+     4
+    48    98   102
+   622
+improper torsion
+ 0
+unit ntype qqatom
+   98 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    98  GRO
+vibration
+     4
+    93    97    99
+   559
+improper torsion
+ 0
+unit ntype qqatom
+   99 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'    99  GRO
+vibration
+     4
+    96    98   100
+   557
+improper torsion
+ 0
+unit ntype qqatom
+  100 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   100  GRO
+vibration
+     4
+    99   103   149
+   441
+improper torsion
+ 0
+unit ntype qqatom
+  101 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   101  GRO
+vibration
+     3
+    52    54   102
+improper torsion
+ 0
+unit ntype qqatom
+  102 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   102  GRO
+vibration
+     4
+    97   101   103
+   507
+improper torsion
+ 0
+unit ntype qqatom
+  103 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   103  GRO
+vibration
+     4
+   100   102   104
+   509
+improper torsion
+ 0
+unit ntype qqatom
+  104 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   104  GRO
+vibration
+     3
+    55   103   153
+improper torsion
+ 0
+unit ntype qqatom
+  105 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   105  GRO
+vibration
+     4
+    56   106   110
+   454
+improper torsion
+ 0
+unit ntype qqatom
+  106 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   106  GRO
+vibration
+     3
+   105   107   153
+improper torsion
+ 0
+unit ntype qqatom
+  107 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   107  GRO
+vibration
+     3
+   106   108   156
+improper torsion
+ 0
+unit ntype qqatom
+  108 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   108  GRO
+vibration
+     4
+   107   111   157
+   604
+improper torsion
+ 0
+unit ntype qqatom
+  109 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   109  GRO
+vibration
+     4
+    60   110   114
+   417
+improper torsion
+ 0
+unit ntype qqatom
+  110 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   110  GRO
+vibration
+     3
+   105   109   111
+improper torsion
+ 0
+unit ntype qqatom
+  111 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   111  GRO
+vibration
+     3
+   108   110   112
+improper torsion
+ 0
+unit ntype qqatom
+  112 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   112  GRO
+vibration
+     4
+   111   115   161
+   547
+improper torsion
+ 0
+unit ntype qqatom
+  113 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   113  GRO
+vibration
+     4
+    64   114   118
+   484
+improper torsion
+ 0
+unit ntype qqatom
+  114 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   114  GRO
+vibration
+     4
+   109   113   115
+   417
+improper torsion
+ 0
+unit ntype qqatom
+  115 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   115  GRO
+vibration
+     3
+   112   114   116
+improper torsion
+ 0
+unit ntype qqatom
+  116 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   116  GRO
+vibration
+     3
+   115   119   165
+improper torsion
+ 0
+unit ntype qqatom
+  117 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   117  GRO
+vibration
+     3
+    68   118   122
+improper torsion
+ 0
+unit ntype qqatom
+  118 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   118  GRO
+vibration
+     4
+   113   117   119
+   486
+improper torsion
+ 0
+unit ntype qqatom
+  119 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   119  GRO
+vibration
+     3
+   116   118   120
+improper torsion
+ 0
+unit ntype qqatom
+  120 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   120  GRO
+vibration
+     3
+   119   123   169
+improper torsion
+ 0
+unit ntype qqatom
+  121 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   121  GRO
+vibration
+     4
+    72   122   126
+   431
+improper torsion
+ 0
+unit ntype qqatom
+  122 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   122  GRO
+vibration
+     3
+   117   121   123
+improper torsion
+ 0
+unit ntype qqatom
+  123 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   123  GRO
+vibration
+     4
+   120   122   124
+   511
+improper torsion
+ 0
+unit ntype qqatom
+  124 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   124  GRO
+vibration
+     4
+   123   127   173
+   513
+improper torsion
+ 0
+unit ntype qqatom
+  125 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   125  GRO
+vibration
+     4
+    76   126   130
+   424
+improper torsion
+ 0
+unit ntype qqatom
+  126 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   126  GRO
+vibration
+     3
+   121   125   127
+improper torsion
+ 0
+unit ntype qqatom
+  127 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   127  GRO
+vibration
+     3
+   124   126   128
+improper torsion
+ 0
+unit ntype qqatom
+  128 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   128  GRO
+vibration
+     3
+   127   131   177
+improper torsion
+ 0
+unit ntype qqatom
+  129 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   129  GRO
+vibration
+     4
+    80   130   134
+   613
+improper torsion
+ 0
+unit ntype qqatom
+  130 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   130  GRO
+vibration
+     4
+   125   129   131
+   613
+improper torsion
+ 0
+unit ntype qqatom
+  131 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   131  GRO
+vibration
+     3
+   128   130   132
+improper torsion
+ 0
+unit ntype qqatom
+  132 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   132  GRO
+vibration
+     3
+   131   135   181
+improper torsion
+ 0
+unit ntype qqatom
+  133 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   133  GRO
+vibration
+     3
+    84   134   138
+improper torsion
+ 0
+unit ntype qqatom
+  134 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   134  GRO
+vibration
+     4
+   129   133   135
+   534
+improper torsion
+ 0
+unit ntype qqatom
+  135 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   135  GRO
+vibration
+     4
+   132   134   136
+   534
+improper torsion
+ 0
+unit ntype qqatom
+  136 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   136  GRO
+vibration
+     3
+   135   139   185
+improper torsion
+ 0
+unit ntype qqatom
+  137 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   137  GRO
+vibration
+     3
+    88   138   142
+improper torsion
+ 0
+unit ntype qqatom
+  138 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   138  GRO
+vibration
+     3
+   133   137   139
+improper torsion
+ 0
+unit ntype qqatom
+  139 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   139  GRO
+vibration
+     4
+   136   138   140
+   551
+improper torsion
+ 0
+unit ntype qqatom
+  140 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   140  GRO
+vibration
+     4
+   139   143   189
+   551
+improper torsion
+ 0
+unit ntype qqatom
+  141 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   141  GRO
+vibration
+     4
+    92   142   146
+   595
+improper torsion
+ 0
+unit ntype qqatom
+  142 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   142  GRO
+vibration
+     3
+   137   141   143
+improper torsion
+ 0
+unit ntype qqatom
+  143 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   143  GRO
+vibration
+     3
+   140   142   144
+improper torsion
+ 0
+unit ntype qqatom
+  144 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   144  GRO
+vibration
+     3
+   143   147   193
+improper torsion
+ 0
+unit ntype qqatom
+  145 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   145  GRO
+vibration
+     4
+    96   146   150
+   504
+improper torsion
+ 0
+unit ntype qqatom
+  146 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   146  GRO
+vibration
+     3
+   141   145   147
+improper torsion
+ 0
+unit ntype qqatom
+  147 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   147  GRO
+vibration
+     3
+   144   146   148
+improper torsion
+ 0
+unit ntype qqatom
+  148 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   148  GRO
+vibration
+     3
+   147   151   197
+improper torsion
+ 0
+unit ntype qqatom
+  149 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   149  GRO
+vibration
+     4
+   100   150   154
+   441
+improper torsion
+ 0
+unit ntype qqatom
+  150 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   150  GRO
+vibration
+     4
+   145   149   151
+   504
+improper torsion
+ 0
+unit ntype qqatom
+  151 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   151  GRO
+vibration
+     4
+   148   150   152
+   590
+improper torsion
+ 0
+unit ntype qqatom
+  152 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   152  GRO
+vibration
+     4
+   151   155   201
+   592
+improper torsion
+ 0
+unit ntype qqatom
+  153 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   153  GRO
+vibration
+     3
+   104   106   154
+improper torsion
+ 0
+unit ntype qqatom
+  154 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   154  GRO
+vibration
+     3
+   149   153   155
+improper torsion
+ 0
+unit ntype qqatom
+  155 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   155  GRO
+vibration
+     3
+   152   154   156
+improper torsion
+ 0
+unit ntype qqatom
+  156 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   156  GRO
+vibration
+     3
+   107   155   205
+improper torsion
+ 0
+unit ntype qqatom
+  157 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   157  GRO
+vibration
+     4
+   108   158   162
+   606
+improper torsion
+ 0
+unit ntype qqatom
+  158 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   158  GRO
+vibration
+     3
+   157   159   205
+improper torsion
+ 0
+unit ntype qqatom
+  159 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   159  GRO
+vibration
+     3
+   158   160   208
+improper torsion
+ 0
+unit ntype qqatom
+  160 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   160  GRO
+vibration
+     4
+   159   163   209
+   498
+improper torsion
+ 0
+unit ntype qqatom
+  161 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   161  GRO
+vibration
+     4
+   112   162   166
+   549
+improper torsion
+ 0
+unit ntype qqatom
+  162 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   162  GRO
+vibration
+     3
+   157   161   163
+improper torsion
+ 0
+unit ntype qqatom
+  163 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   163  GRO
+vibration
+     3
+   160   162   164
+improper torsion
+ 0
+unit ntype qqatom
+  164 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   164  GRO
+vibration
+     3
+   163   167   213
+improper torsion
+ 0
+unit ntype qqatom
+  165 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   165  GRO
+vibration
+     3
+   116   166   170
+improper torsion
+ 0
+unit ntype qqatom
+  166 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   166  GRO
+vibration
+     3
+   161   165   167
+improper torsion
+ 0
+unit ntype qqatom
+  167 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   167  GRO
+vibration
+     3
+   164   166   168
+improper torsion
+ 0
+unit ntype qqatom
+  168 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   168  GRO
+vibration
+     4
+   167   171   217
+   608
+improper torsion
+ 0
+unit ntype qqatom
+  169 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   169  GRO
+vibration
+     3
+   120   170   174
+improper torsion
+ 0
+unit ntype qqatom
+  170 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   170  GRO
+vibration
+     4
+   165   169   171
+   588
+improper torsion
+ 0
+unit ntype qqatom
+  171 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   171  GRO
+vibration
+     4
+   168   170   172
+   588
+improper torsion
+ 0
+unit ntype qqatom
+  172 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   172  GRO
+vibration
+     3
+   171   175   221
+improper torsion
+ 0
+unit ntype qqatom
+  173 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   173  GRO
+vibration
+     3
+   124   174   178
+improper torsion
+ 0
+unit ntype qqatom
+  174 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   174  GRO
+vibration
+     3
+   169   173   175
+improper torsion
+ 0
+unit ntype qqatom
+  175 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   175  GRO
+vibration
+     4
+   172   174   176
+   579
+improper torsion
+ 0
+unit ntype qqatom
+  176 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   176  GRO
+vibration
+     4
+   175   179   225
+   579
+improper torsion
+ 0
+unit ntype qqatom
+  177 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   177  GRO
+vibration
+     3
+   128   178   182
+improper torsion
+ 0
+unit ntype qqatom
+  178 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   178  GRO
+vibration
+     3
+   173   177   179
+improper torsion
+ 0
+unit ntype qqatom
+  179 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   179  GRO
+vibration
+     3
+   176   178   180
+improper torsion
+ 0
+unit ntype qqatom
+  180 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   180  GRO
+vibration
+     3
+   179   183   229
+improper torsion
+ 0
+unit ntype qqatom
+  181 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   181  GRO
+vibration
+     3
+   132   182   186
+improper torsion
+ 0
+unit ntype qqatom
+  182 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   182  GRO
+vibration
+     3
+   177   181   183
+improper torsion
+ 0
+unit ntype qqatom
+  183 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   183  GRO
+vibration
+     3
+   180   182   184
+improper torsion
+ 0
+unit ntype qqatom
+  184 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   184  GRO
+vibration
+     4
+   183   187   233
+   589
+improper torsion
+ 0
+unit ntype qqatom
+  185 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   185  GRO
+vibration
+     4
+   136   186   190
+   602
+improper torsion
+ 0
+unit ntype qqatom
+  186 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   186  GRO
+vibration
+     4
+   181   185   187
+   602
+improper torsion
+ 0
+unit ntype qqatom
+  187 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   187  GRO
+vibration
+     4
+   184   186   188
+   589
+improper torsion
+ 0
+unit ntype qqatom
+  188 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   188  GRO
+vibration
+     3
+   187   191   237
+improper torsion
+ 0
+unit ntype qqatom
+  189 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   189  GRO
+vibration
+     4
+   140   190   194
+   496
+improper torsion
+ 0
+unit ntype qqatom
+  190 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   190  GRO
+vibration
+     4
+   185   189   191
+   427
+improper torsion
+ 0
+unit ntype qqatom
+  191 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   191  GRO
+vibration
+     4
+   188   190   192
+   427
+improper torsion
+ 0
+unit ntype qqatom
+  192 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   192  GRO
+vibration
+     3
+   191   195   241
+improper torsion
+ 0
+unit ntype qqatom
+  193 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   193  GRO
+vibration
+     3
+   144   194   198
+improper torsion
+ 0
+unit ntype qqatom
+  194 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   194  GRO
+vibration
+     4
+   189   193   195
+   496
+improper torsion
+ 0
+unit ntype qqatom
+  195 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   195  GRO
+vibration
+     3
+   192   194   196
+improper torsion
+ 0
+unit ntype qqatom
+  196 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   196  GRO
+vibration
+     3
+   195   199   245
+improper torsion
+ 0
+unit ntype qqatom
+  197 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   197  GRO
+vibration
+     4
+   148   198   202
+   614
+improper torsion
+ 0
+unit ntype qqatom
+  198 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   198  GRO
+vibration
+     3
+   193   197   199
+improper torsion
+ 0
+unit ntype qqatom
+  199 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   199  GRO
+vibration
+     4
+   196   198   200
+   601
+improper torsion
+ 0
+unit ntype qqatom
+  200 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   200  GRO
+vibration
+     4
+   199   203   249
+   601
+improper torsion
+ 0
+unit ntype qqatom
+  201 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   201  GRO
+vibration
+     3
+   152   202   206
+improper torsion
+ 0
+unit ntype qqatom
+  202 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   202  GRO
+vibration
+     4
+   197   201   203
+   616
+improper torsion
+ 0
+unit ntype qqatom
+  203 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   203  GRO
+vibration
+     4
+   200   202   204
+   623
+improper torsion
+ 0
+unit ntype qqatom
+  204 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   204  GRO
+vibration
+     4
+   203   207   253
+   623
+improper torsion
+ 0
+unit ntype qqatom
+  205 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   205  GRO
+vibration
+     4
+   156   158   206
+   443
+improper torsion
+ 0
+unit ntype qqatom
+  206 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   206  GRO
+vibration
+     4
+   201   205   207
+   445
+improper torsion
+ 0
+unit ntype qqatom
+  207 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   207  GRO
+vibration
+     4
+   204   206   208
+   489
+improper torsion
+ 0
+unit ntype qqatom
+  208 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   208  GRO
+vibration
+     4
+   159   207   257
+   491
+improper torsion
+ 0
+unit ntype qqatom
+  209 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   209  GRO
+vibration
+     4
+   160   210   214
+   498
+improper torsion
+ 0
+unit ntype qqatom
+  210 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   210  GRO
+vibration
+     3
+   209   211   257
+improper torsion
+ 0
+unit ntype qqatom
+  211 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   211  GRO
+vibration
+     3
+   210   212   260
+improper torsion
+ 0
+unit ntype qqatom
+  212 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   212  GRO
+vibration
+     3
+   211   215   261
+improper torsion
+ 0
+unit ntype qqatom
+  213 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   213  GRO
+vibration
+     3
+   164   214   218
+improper torsion
+ 0
+unit ntype qqatom
+  214 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   214  GRO
+vibration
+     3
+   209   213   215
+improper torsion
+ 0
+unit ntype qqatom
+  215 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   215  GRO
+vibration
+     3
+   212   214   216
+improper torsion
+ 0
+unit ntype qqatom
+  216 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   216  GRO
+vibration
+     3
+   215   219   265
+improper torsion
+ 0
+unit ntype qqatom
+  217 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   217  GRO
+vibration
+     4
+   168   218   222
+   610
+improper torsion
+ 0
+unit ntype qqatom
+  218 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   218  GRO
+vibration
+     4
+   213   217   219
+   426
+improper torsion
+ 0
+unit ntype qqatom
+  219 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   219  GRO
+vibration
+     4
+   216   218   220
+   426
+improper torsion
+ 0
+unit ntype qqatom
+  220 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   220  GRO
+vibration
+     4
+   219   223   269
+   541
+improper torsion
+ 0
+unit ntype qqatom
+  221 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   221  GRO
+vibration
+     3
+   172   222   226
+improper torsion
+ 0
+unit ntype qqatom
+  222 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   222  GRO
+vibration
+     4
+   217   221   223
+   569
+improper torsion
+ 0
+unit ntype qqatom
+  223 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   223  GRO
+vibration
+     4
+   220   222   224
+   571
+improper torsion
+ 0
+unit ntype qqatom
+  224 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   224  GRO
+vibration
+     3
+   223   227   273
+improper torsion
+ 0
+unit ntype qqatom
+  225 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   225  GRO
+vibration
+     3
+   176   226   230
+improper torsion
+ 0
+unit ntype qqatom
+  226 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   226  GRO
+vibration
+     3
+   221   225   227
+improper torsion
+ 0
+unit ntype qqatom
+  227 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   227  GRO
+vibration
+     3
+   224   226   228
+improper torsion
+ 0
+unit ntype qqatom
+  228 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   228  GRO
+vibration
+     3
+   227   231   277
+improper torsion
+ 0
+unit ntype qqatom
+  229 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   229  GRO
+vibration
+     4
+   180   230   234
+   461
+improper torsion
+ 0
+unit ntype qqatom
+  230 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   230  GRO
+vibration
+     3
+   225   229   231
+improper torsion
+ 0
+unit ntype qqatom
+  231 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   231  GRO
+vibration
+     3
+   228   230   232
+improper torsion
+ 0
+unit ntype qqatom
+  232 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   232  GRO
+vibration
+     4
+   231   235   281
+   586
+improper torsion
+ 0
+unit ntype qqatom
+  233 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   233  GRO
+vibration
+     4
+   184   234   238
+   468
+improper torsion
+ 0
+unit ntype qqatom
+  234 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   234  GRO
+vibration
+     4
+   229   233   235
+   461
+improper torsion
+ 0
+unit ntype qqatom
+  235 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   235  GRO
+vibration
+     4
+   232   234   236
+   584
+improper torsion
+ 0
+unit ntype qqatom
+  236 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   236  GRO
+vibration
+     4
+   235   239   285
+   451
+improper torsion
+ 0
+unit ntype qqatom
+  237 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   237  GRO
+vibration
+     3
+   188   238   242
+improper torsion
+ 0
+unit ntype qqatom
+  238 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   238  GRO
+vibration
+     4
+   233   237   239
+   468
+improper torsion
+ 0
+unit ntype qqatom
+  239 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   239  GRO
+vibration
+     4
+   236   238   240
+   565
+improper torsion
+ 0
+unit ntype qqatom
+  240 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   240  GRO
+vibration
+     4
+   239   243   289
+   567
+improper torsion
+ 0
+unit ntype qqatom
+  241 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   241  GRO
+vibration
+     4
+   192   242   246
+   580
+improper torsion
+ 0
+unit ntype qqatom
+  242 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   242  GRO
+vibration
+     3
+   237   241   243
+improper torsion
+ 0
+unit ntype qqatom
+  243 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   243  GRO
+vibration
+     4
+   240   242   244
+   535
+improper torsion
+ 0
+unit ntype qqatom
+  244 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   244  GRO
+vibration
+     4
+   243   247   293
+   535
+improper torsion
+ 0
+unit ntype qqatom
+  245 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   245  GRO
+vibration
+     3
+   196   246   250
+improper torsion
+ 0
+unit ntype qqatom
+  246 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   246  GRO
+vibration
+     4
+   241   245   247
+   580
+improper torsion
+ 0
+unit ntype qqatom
+  247 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   247  GRO
+vibration
+     4
+   244   246   248
+   542
+improper torsion
+ 0
+unit ntype qqatom
+  248 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   248  GRO
+vibration
+     4
+   247   251   297
+   544
+improper torsion
+ 0
+unit ntype qqatom
+  249 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   249  GRO
+vibration
+     3
+   200   250   254
+improper torsion
+ 0
+unit ntype qqatom
+  250 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   250  GRO
+vibration
+     3
+   245   249   251
+improper torsion
+ 0
+unit ntype qqatom
+  251 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   251  GRO
+vibration
+     3
+   248   250   252
+improper torsion
+ 0
+unit ntype qqatom
+  252 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   252  GRO
+vibration
+     3
+   251   255   301
+improper torsion
+ 0
+unit ntype qqatom
+  253 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   253  GRO
+vibration
+     4
+   204   254   258
+   519
+improper torsion
+ 0
+unit ntype qqatom
+  254 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   254  GRO
+vibration
+     4
+   249   253   255
+   442
+improper torsion
+ 0
+unit ntype qqatom
+  255 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   255  GRO
+vibration
+     4
+   252   254   256
+   442
+improper torsion
+ 0
+unit ntype qqatom
+  256 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   256  GRO
+vibration
+     3
+   255   259   305
+improper torsion
+ 0
+unit ntype qqatom
+  257 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   257  GRO
+vibration
+     3
+   208   210   258
+improper torsion
+ 0
+unit ntype qqatom
+  258 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   258  GRO
+vibration
+     4
+   253   257   259
+   521
+improper torsion
+ 0
+unit ntype qqatom
+  259 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   259  GRO
+vibration
+     4
+   256   258   260
+   506
+improper torsion
+ 0
+unit ntype qqatom
+  260 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   260  GRO
+vibration
+     4
+   211   259   309
+   506
+improper torsion
+ 0
+unit ntype qqatom
+  261 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   261  GRO
+vibration
+     3
+   212   262   266
+improper torsion
+ 0
+unit ntype qqatom
+  262 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   262  GRO
+vibration
+     3
+   261   263   309
+improper torsion
+ 0
+unit ntype qqatom
+  263 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   263  GRO
+vibration
+     3
+   262   264   312
+improper torsion
+ 0
+unit ntype qqatom
+  264 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   264  GRO
+vibration
+     3
+   263   267   313
+improper torsion
+ 0
+unit ntype qqatom
+  265 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   265  GRO
+vibration
+     3
+   216   266   270
+improper torsion
+ 0
+unit ntype qqatom
+  266 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   266  GRO
+vibration
+     4
+   261   265   267
+   556
+improper torsion
+ 0
+unit ntype qqatom
+  267 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   267  GRO
+vibration
+     4
+   264   266   268
+   556
+improper torsion
+ 0
+unit ntype qqatom
+  268 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   268  GRO
+vibration
+     4
+   267   271   317
+   488
+improper torsion
+ 0
+unit ntype qqatom
+  269 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   269  GRO
+vibration
+     4
+   220   270   274
+   541
+improper torsion
+ 0
+unit ntype qqatom
+  270 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   270  GRO
+vibration
+     4
+   265   269   271
+   575
+improper torsion
+ 0
+unit ntype qqatom
+  271 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   271  GRO
+vibration
+     4
+   268   270   272
+   577
+improper torsion
+ 0
+unit ntype qqatom
+  272 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   272  GRO
+vibration
+     3
+   271   275   321
+improper torsion
+ 0
+unit ntype qqatom
+  273 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   273  GRO
+vibration
+     3
+   224   274   278
+improper torsion
+ 0
+unit ntype qqatom
+  274 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   274  GRO
+vibration
+     3
+   269   273   275
+improper torsion
+ 0
+unit ntype qqatom
+  275 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   275  GRO
+vibration
+     3
+   272   274   276
+improper torsion
+ 0
+unit ntype qqatom
+  276 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   276  GRO
+vibration
+     3
+   275   279   325
+improper torsion
+ 0
+unit ntype qqatom
+  277 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   277  GRO
+vibration
+     3
+   228   278   282
+improper torsion
+ 0
+unit ntype qqatom
+  278 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   278  GRO
+vibration
+     3
+   273   277   279
+improper torsion
+ 0
+unit ntype qqatom
+  279 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   279  GRO
+vibration
+     3
+   276   278   280
+improper torsion
+ 0
+unit ntype qqatom
+  280 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   280  GRO
+vibration
+     4
+   279   283   329
+   600
+improper torsion
+ 0
+unit ntype qqatom
+  281 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   281  GRO
+vibration
+     4
+   232   282   286
+   529
+improper torsion
+ 0
+unit ntype qqatom
+  282 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   282  GRO
+vibration
+     4
+   277   281   283
+   531
+improper torsion
+ 0
+unit ntype qqatom
+  283 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   283  GRO
+vibration
+     4
+   280   282   284
+   600
+improper torsion
+ 0
+unit ntype qqatom
+  284 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   284  GRO
+vibration
+     4
+   283   287   333
+   528
+improper torsion
+ 0
+unit ntype qqatom
+  285 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   285  GRO
+vibration
+     4
+   236   286   290
+   451
+improper torsion
+ 0
+unit ntype qqatom
+  286 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   286  GRO
+vibration
+     4
+   281   285   287
+   493
+improper torsion
+ 0
+unit ntype qqatom
+  287 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   287  GRO
+vibration
+     4
+   284   286   288
+   493
+improper torsion
+ 0
+unit ntype qqatom
+  288 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   288  GRO
+vibration
+     4
+   287   291   337
+   471
+improper torsion
+ 0
+unit ntype qqatom
+  289 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   289  GRO
+vibration
+     3
+   240   290   294
+improper torsion
+ 0
+unit ntype qqatom
+  290 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   290  GRO
+vibration
+     3
+   285   289   291
+improper torsion
+ 0
+unit ntype qqatom
+  291 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   291  GRO
+vibration
+     4
+   288   290   292
+   540
+improper torsion
+ 0
+unit ntype qqatom
+  292 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   292  GRO
+vibration
+     4
+   291   295   341
+   540
+improper torsion
+ 0
+unit ntype qqatom
+  293 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   293  GRO
+vibration
+     3
+   244   294   298
+improper torsion
+ 0
+unit ntype qqatom
+  294 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   294  GRO
+vibration
+     3
+   289   293   295
+improper torsion
+ 0
+unit ntype qqatom
+  295 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   295  GRO
+vibration
+     3
+   292   294   296
+improper torsion
+ 0
+unit ntype qqatom
+  296 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   296  GRO
+vibration
+     3
+   295   299   345
+improper torsion
+ 0
+unit ntype qqatom
+  297 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   297  GRO
+vibration
+     3
+   248   298   302
+improper torsion
+ 0
+unit ntype qqatom
+  298 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   298  GRO
+vibration
+     3
+   293   297   299
+improper torsion
+ 0
+unit ntype qqatom
+  299 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   299  GRO
+vibration
+     3
+   296   298   300
+improper torsion
+ 0
+unit ntype qqatom
+  300 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   300  GRO
+vibration
+     3
+   299   303   349
+improper torsion
+ 0
+unit ntype qqatom
+  301 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   301  GRO
+vibration
+     3
+   252   302   306
+improper torsion
+ 0
+unit ntype qqatom
+  302 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   302  GRO
+vibration
+     4
+   297   301   303
+   624
+improper torsion
+ 0
+unit ntype qqatom
+  303 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   303  GRO
+vibration
+     4
+   300   302   304
+   626
+improper torsion
+ 0
+unit ntype qqatom
+  304 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   304  GRO
+vibration
+     3
+   303   307   353
+improper torsion
+ 0
+unit ntype qqatom
+  305 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   305  GRO
+vibration
+     4
+   256   306   310
+   594
+improper torsion
+ 0
+unit ntype qqatom
+  306 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   306  GRO
+vibration
+     4
+   301   305   307
+   594
+improper torsion
+ 0
+unit ntype qqatom
+  307 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   307  GRO
+vibration
+     3
+   304   306   308
+improper torsion
+ 0
+unit ntype qqatom
+  308 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   308  GRO
+vibration
+     3
+   307   311   357
+improper torsion
+ 0
+unit ntype qqatom
+  309 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   309  GRO
+vibration
+     4
+   260   262   310
+   469
+improper torsion
+ 0
+unit ntype qqatom
+  310 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   310  GRO
+vibration
+     4
+   305   309   311
+   469
+improper torsion
+ 0
+unit ntype qqatom
+  311 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   311  GRO
+vibration
+     4
+   308   310   312
+   536
+improper torsion
+ 0
+unit ntype qqatom
+  312 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   312  GRO
+vibration
+     4
+   263   311   361
+   538
+improper torsion
+ 0
+unit ntype qqatom
+  313 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   313  GRO
+vibration
+     3
+   264   314   318
+improper torsion
+ 0
+unit ntype qqatom
+  314 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   314  GRO
+vibration
+     3
+   313   315   361
+improper torsion
+ 0
+unit ntype qqatom
+  315 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   315  GRO
+vibration
+     4
+   314   316   364
+   553
+improper torsion
+ 0
+unit ntype qqatom
+  316 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   316  GRO
+vibration
+     3
+   315   319   365
+improper torsion
+ 0
+unit ntype qqatom
+  317 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   317  GRO
+vibration
+     4
+   268   318   322
+   488
+improper torsion
+ 0
+unit ntype qqatom
+  318 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   318  GRO
+vibration
+     3
+   313   317   319
+improper torsion
+ 0
+unit ntype qqatom
+  319 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   319  GRO
+vibration
+     4
+   316   318   320
+   470
+improper torsion
+ 0
+unit ntype qqatom
+  320 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   320  GRO
+vibration
+     4
+   319   323   369
+   470
+improper torsion
+ 0
+unit ntype qqatom
+  321 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   321  GRO
+vibration
+     3
+   272   322   326
+improper torsion
+ 0
+unit ntype qqatom
+  322 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   322  GRO
+vibration
+     3
+   317   321   323
+improper torsion
+ 0
+unit ntype qqatom
+  323 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   323  GRO
+vibration
+     3
+   320   322   324
+improper torsion
+ 0
+unit ntype qqatom
+  324 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   324  GRO
+vibration
+     4
+   323   327   373
+   456
+improper torsion
+ 0
+unit ntype qqatom
+  325 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   325  GRO
+vibration
+     3
+   276   326   330
+improper torsion
+ 0
+unit ntype qqatom
+  326 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   326  GRO
+vibration
+     3
+   321   325   327
+improper torsion
+ 0
+unit ntype qqatom
+  327 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   327  GRO
+vibration
+     3
+   324   326   328
+improper torsion
+ 0
+unit ntype qqatom
+  328 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   328  GRO
+vibration
+     3
+   327   331   377
+improper torsion
+ 0
+unit ntype qqatom
+  329 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   329  GRO
+vibration
+     4
+   280   330   334
+   462
+improper torsion
+ 0
+unit ntype qqatom
+  330 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   330  GRO
+vibration
+     4
+   325   329   331
+   462
+improper torsion
+ 0
+unit ntype qqatom
+  331 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   331  GRO
+vibration
+     3
+   328   330   332
+improper torsion
+ 0
+unit ntype qqatom
+  332 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   332  GRO
+vibration
+     3
+   331   335   381
+improper torsion
+ 0
+unit ntype qqatom
+  333 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   333  GRO
+vibration
+     4
+   284   334   338
+   528
+improper torsion
+ 0
+unit ntype qqatom
+  334 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   334  GRO
+vibration
+     4
+   329   333   335
+   418
+improper torsion
+ 0
+unit ntype qqatom
+  335 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   335  GRO
+vibration
+     4
+   332   334   336
+   420
+improper torsion
+ 0
+unit ntype qqatom
+  336 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   336  GRO
+vibration
+     3
+   335   339   385
+improper torsion
+ 0
+unit ntype qqatom
+  337 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   337  GRO
+vibration
+     4
+   288   338   342
+   471
+improper torsion
+ 0
+unit ntype qqatom
+  338 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   338  GRO
+vibration
+     3
+   333   337   339
+improper torsion
+ 0
+unit ntype qqatom
+  339 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   339  GRO
+vibration
+     4
+   336   338   340
+   628
+improper torsion
+ 0
+unit ntype qqatom
+  340 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   340  GRO
+vibration
+     4
+   339   343   389
+   630
+improper torsion
+ 0
+unit ntype qqatom
+  341 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   341  GRO
+vibration
+     3
+   292   342   346
+improper torsion
+ 0
+unit ntype qqatom
+  342 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   342  GRO
+vibration
+     3
+   337   341   343
+improper torsion
+ 0
+unit ntype qqatom
+  343 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   343  GRO
+vibration
+     3
+   340   342   344
+improper torsion
+ 0
+unit ntype qqatom
+  344 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   344  GRO
+vibration
+     3
+   343   347   393
+improper torsion
+ 0
+unit ntype qqatom
+  345 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   345  GRO
+vibration
+     3
+   296   346   350
+improper torsion
+ 0
+unit ntype qqatom
+  346 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   346  GRO
+vibration
+     3
+   341   345   347
+improper torsion
+ 0
+unit ntype qqatom
+  347 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   347  GRO
+vibration
+     3
+   344   346   348
+improper torsion
+ 0
+unit ntype qqatom
+  348 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   348  GRO
+vibration
+     3
+   347   351   397
+improper torsion
+ 0
+unit ntype qqatom
+  349 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   349  GRO
+vibration
+     3
+   300   350   354
+improper torsion
+ 0
+unit ntype qqatom
+  350 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   350  GRO
+vibration
+     3
+   345   349   351
+improper torsion
+ 0
+unit ntype qqatom
+  351 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   351  GRO
+vibration
+     3
+   348   350   352
+improper torsion
+ 0
+unit ntype qqatom
+  352 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   352  GRO
+vibration
+     4
+   351   355   401
+   495
+improper torsion
+ 0
+unit ntype qqatom
+  353 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   353  GRO
+vibration
+     3
+   304   354   358
+improper torsion
+ 0
+unit ntype qqatom
+  354 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   354  GRO
+vibration
+     3
+   349   353   355
+improper torsion
+ 0
+unit ntype qqatom
+  355 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   355  GRO
+vibration
+     3
+   352   354   356
+improper torsion
+ 0
+unit ntype qqatom
+  356 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   356  GRO
+vibration
+     3
+   355   359   405
+improper torsion
+ 0
+unit ntype qqatom
+  357 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   357  GRO
+vibration
+     3
+   308   358   362
+improper torsion
+ 0
+unit ntype qqatom
+  358 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   358  GRO
+vibration
+     3
+   353   357   359
+improper torsion
+ 0
+unit ntype qqatom
+  359 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   359  GRO
+vibration
+     3
+   356   358   360
+improper torsion
+ 0
+unit ntype qqatom
+  360 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   360  GRO
+vibration
+     3
+   359   363   409
+improper torsion
+ 0
+unit ntype qqatom
+  361 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   361  GRO
+vibration
+     3
+   312   314   362
+improper torsion
+ 0
+unit ntype qqatom
+  362 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   362  GRO
+vibration
+     3
+   357   361   363
+improper torsion
+ 0
+unit ntype qqatom
+  363 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   363  GRO
+vibration
+     3
+   360   362   364
+improper torsion
+ 0
+unit ntype qqatom
+  364 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   364  GRO
+vibration
+     4
+   315   363   413
+   553
+improper torsion
+ 0
+unit ntype qqatom
+  365 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   365  GRO
+vibration
+     3
+   316   366   370
+improper torsion
+ 0
+unit ntype qqatom
+  366 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   366  GRO
+vibration
+     3
+   365   367   413
+improper torsion
+ 0
+unit ntype qqatom
+  367 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   367  GRO
+vibration
+     4
+   366   368   416
+   464
+improper torsion
+ 0
+unit ntype qqatom
+  368 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   368  GRO
+vibration
+     4
+     1   367   371
+   555
+improper torsion
+ 0
+unit ntype qqatom
+  369 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   369  GRO
+vibration
+     3
+   320   370   374
+improper torsion
+ 0
+unit ntype qqatom
+  370 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   370  GRO
+vibration
+     3
+   365   369   371
+improper torsion
+ 0
+unit ntype qqatom
+  371 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   371  GRO
+vibration
+     3
+   368   370   372
+improper torsion
+ 0
+unit ntype qqatom
+  372 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   372  GRO
+vibration
+     4
+     5   371   375
+   497
+improper torsion
+ 0
+unit ntype qqatom
+  373 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   373  GRO
+vibration
+     4
+   324   374   378
+   456
+improper torsion
+ 0
+unit ntype qqatom
+  374 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   374  GRO
+vibration
+     3
+   369   373   375
+improper torsion
+ 0
+unit ntype qqatom
+  375 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   375  GRO
+vibration
+     3
+   372   374   376
+improper torsion
+ 0
+unit ntype qqatom
+  376 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   376  GRO
+vibration
+     3
+     9   375   379
+improper torsion
+ 0
+unit ntype qqatom
+  377 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   377  GRO
+vibration
+     3
+   328   378   382
+improper torsion
+ 0
+unit ntype qqatom
+  378 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   378  GRO
+vibration
+     3
+   373   377   379
+improper torsion
+ 0
+unit ntype qqatom
+  379 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   379  GRO
+vibration
+     3
+   376   378   380
+improper torsion
+ 0
+unit ntype qqatom
+  380 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   380  GRO
+vibration
+     4
+    13   379   383
+   612
+improper torsion
+ 0
+unit ntype qqatom
+  381 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   381  GRO
+vibration
+     4
+   332   382   386
+   581
+improper torsion
+ 0
+unit ntype qqatom
+  382 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   382  GRO
+vibration
+     3
+   377   381   383
+improper torsion
+ 0
+unit ntype qqatom
+  383 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   383  GRO
+vibration
+     4
+   380   382   384
+   612
+improper torsion
+ 0
+unit ntype qqatom
+  384 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   384  GRO
+vibration
+     4
+    17   383   387
+   494
+improper torsion
+ 0
+unit ntype qqatom
+  385 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   385  GRO
+vibration
+     3
+   336   386   390
+improper torsion
+ 0
+unit ntype qqatom
+  386 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   386  GRO
+vibration
+     4
+   381   385   387
+   581
+improper torsion
+ 0
+unit ntype qqatom
+  387 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   387  GRO
+vibration
+     4
+   384   386   388
+   494
+improper torsion
+ 0
+unit ntype qqatom
+  388 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   388  GRO
+vibration
+     4
+    21   387   391
+   620
+improper torsion
+ 0
+unit ntype qqatom
+  389 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   389  GRO
+vibration
+     4
+   340   390   394
+   523
+improper torsion
+ 0
+unit ntype qqatom
+  390 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   390  GRO
+vibration
+     4
+   385   389   391
+   428
+improper torsion
+ 0
+unit ntype qqatom
+  391 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   391  GRO
+vibration
+     4
+   388   390   392
+   428
+improper torsion
+ 0
+unit ntype qqatom
+  392 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   392  GRO
+vibration
+     3
+    25   391   395
+improper torsion
+ 0
+unit ntype qqatom
+  393 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   393  GRO
+vibration
+     3
+   344   394   398
+improper torsion
+ 0
+unit ntype qqatom
+  394 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   394  GRO
+vibration
+     4
+   389   393   395
+   525
+improper torsion
+ 0
+unit ntype qqatom
+  395 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   395  GRO
+vibration
+     3
+   392   394   396
+improper torsion
+ 0
+unit ntype qqatom
+  396 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   396  GRO
+vibration
+     3
+    29   395   399
+improper torsion
+ 0
+unit ntype qqatom
+  397 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   397  GRO
+vibration
+     3
+   348   398   402
+improper torsion
+ 0
+unit ntype qqatom
+  398 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   398  GRO
+vibration
+     4
+   393   397   399
+   437
+improper torsion
+ 0
+unit ntype qqatom
+  399 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   399  GRO
+vibration
+     4
+   396   398   400
+   439
+improper torsion
+ 0
+unit ntype qqatom
+  400 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   400  GRO
+vibration
+     3
+    33   399   403
+improper torsion
+ 0
+unit ntype qqatom
+  401 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   401  GRO
+vibration
+     4
+   352   402   406
+   495
+improper torsion
+ 0
+unit ntype qqatom
+  402 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   402  GRO
+vibration
+     3
+   397   401   403
+improper torsion
+ 0
+unit ntype qqatom
+  403 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   403  GRO
+vibration
+     4
+   400   402   404
+   583
+improper torsion
+ 0
+unit ntype qqatom
+  404 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   404  GRO
+vibration
+     4
+    37   403   407
+   583
+improper torsion
+ 0
+unit ntype qqatom
+  405 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   405  GRO
+vibration
+     3
+   356   406   410
+improper torsion
+ 0
+unit ntype qqatom
+  406 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   406  GRO
+vibration
+     3
+   401   405   407
+improper torsion
+ 0
+unit ntype qqatom
+  407 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   407  GRO
+vibration
+     4
+   404   406   408
+   478
+improper torsion
+ 0
+unit ntype qqatom
+  408 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   408  GRO
+vibration
+     4
+    41   407   411
+   476
+improper torsion
+ 0
+unit ntype qqatom
+  409 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   409  GRO
+vibration
+     4
+   360   410   414
+   505
+improper torsion
+ 0
+unit ntype qqatom
+  410 'CE'    0.184
+pdbname aminonum aminoshort
+ 'CE'   410  GRO
+vibration
+     4
+   405   409   411
+   505
+improper torsion
+ 0
+unit ntype qqatom
+  411 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   411  GRO
+vibration
+     4
+   408   410   412
+   457
+improper torsion
+ 0
+unit ntype qqatom
+  412 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   412  GRO
+vibration
+     4
+    45   411   415
+   459
+improper torsion
+ 0
+unit ntype qqatom
+  413 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   413  GRO
+vibration
+     4
+   364   366   414
+   561
+improper torsion
+ 0
+unit ntype qqatom
+  414 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   414  GRO
+vibration
+     4
+   409   413   415
+   563
+improper torsion
+ 0
+unit ntype qqatom
+  415 'CA'    0.000
+pdbname aminonum aminoshort
+ 'CA'   415  GRO
+vibration
+     3
+   412   414   416
+improper torsion
+ 0
+unit ntype qqatom
+  416 'CH'    0.263
+pdbname aminonum aminoshort
+ 'CH'   416  GRO
+vibration
+     4
+    49   367   415
+   466
+improper torsion
+ 0
+unit ntype qqatom
+  417 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   417  GRO
+vibration
+     2
+   109   114
+improper torsion
+ 0
+unit ntype qqatom
+  418 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   418  GRO
+vibration
+     2
+   334   419
+improper torsion
+ 0
+unit ntype qqatom
+  419 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   419  GRO
+vibration
+     1
+   418
+improper torsion
+ 0
+unit ntype qqatom
+  420 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   420  GRO
+vibration
+     2
+   335   421
+improper torsion
+ 0
+unit ntype qqatom
+  421 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   421  GRO
+vibration
+     1
+   420
+improper torsion
+ 0
+unit ntype qqatom
+  422 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   422  GRO
+vibration
+     2
+    76   423
+improper torsion
+ 0
+unit ntype qqatom
+  423 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   423  GRO
+vibration
+     1
+   422
+improper torsion
+ 0
+unit ntype qqatom
+  424 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   424  GRO
+vibration
+     2
+   125   425
+improper torsion
+ 0
+unit ntype qqatom
+  425 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   425  GRO
+vibration
+     1
+   424
+improper torsion
+ 0
+unit ntype qqatom
+  426 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   426  GRO
+vibration
+     2
+   218   219
+improper torsion
+ 0
+unit ntype qqatom
+  427 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   427  GRO
+vibration
+     2
+   190   191
+improper torsion
+ 0
+unit ntype qqatom
+  428 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   428  GRO
+vibration
+     2
+   390   391
+improper torsion
+ 0
+unit ntype qqatom
+  429 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   429  GRO
+vibration
+     2
+    72   430
+improper torsion
+ 0
+unit ntype qqatom
+  430 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   430  GRO
+vibration
+     1
+   429
+improper torsion
+ 0
+unit ntype qqatom
+  431 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   431  GRO
+vibration
+     2
+   121   432
+improper torsion
+ 0
+unit ntype qqatom
+  432 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   432  GRO
+vibration
+     1
+   431
+improper torsion
+ 0
+unit ntype qqatom
+  433 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   433  GRO
+vibration
+     2
+    87   434
+improper torsion
+ 0
+unit ntype qqatom
+  434 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   434  GRO
+vibration
+     1
+   433
+improper torsion
+ 0
+unit ntype qqatom
+  435 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   435  GRO
+vibration
+     2
+    88   436
+improper torsion
+ 0
+unit ntype qqatom
+  436 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   436  GRO
+vibration
+     1
+   435
+improper torsion
+ 0
+unit ntype qqatom
+  437 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   437  GRO
+vibration
+     2
+   398   438
+improper torsion
+ 0
+unit ntype qqatom
+  438 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   438  GRO
+vibration
+     1
+   437
+improper torsion
+ 0
+unit ntype qqatom
+  439 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   439  GRO
+vibration
+     2
+   399   440
+improper torsion
+ 0
+unit ntype qqatom
+  440 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   440  GRO
+vibration
+     1
+   439
+improper torsion
+ 0
+unit ntype qqatom
+  441 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   441  GRO
+vibration
+     2
+   100   149
+improper torsion
+ 0
+unit ntype qqatom
+  442 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   442  GRO
+vibration
+     2
+   254   255
+improper torsion
+ 0
+unit ntype qqatom
+  443 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   443  GRO
+vibration
+     2
+   205   444
+improper torsion
+ 0
+unit ntype qqatom
+  444 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   444  GRO
+vibration
+     1
+   443
+improper torsion
+ 0
+unit ntype qqatom
+  445 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   445  GRO
+vibration
+     2
+   206   446
+improper torsion
+ 0
+unit ntype qqatom
+  446 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   446  GRO
+vibration
+     1
+   445
+improper torsion
+ 0
+unit ntype qqatom
+  447 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   447  GRO
+vibration
+     2
+    31   448
+improper torsion
+ 0
+unit ntype qqatom
+  448 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   448  GRO
+vibration
+     1
+   447
+improper torsion
+ 0
+unit ntype qqatom
+  449 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   449  GRO
+vibration
+     2
+    32   450
+improper torsion
+ 0
+unit ntype qqatom
+  450 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   450  GRO
+vibration
+     1
+   449
+improper torsion
+ 0
+unit ntype qqatom
+  451 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   451  GRO
+vibration
+     2
+   236   285
+improper torsion
+ 0
+unit ntype qqatom
+  452 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   452  GRO
+vibration
+     2
+    56   453
+improper torsion
+ 0
+unit ntype qqatom
+  453 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   453  GRO
+vibration
+     1
+   452
+improper torsion
+ 0
+unit ntype qqatom
+  454 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   454  GRO
+vibration
+     2
+   105   455
+improper torsion
+ 0
+unit ntype qqatom
+  455 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   455  GRO
+vibration
+     1
+   454
+improper torsion
+ 0
+unit ntype qqatom
+  456 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   456  GRO
+vibration
+     2
+   324   373
+improper torsion
+ 0
+unit ntype qqatom
+  457 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   457  GRO
+vibration
+     2
+   411   458
+improper torsion
+ 0
+unit ntype qqatom
+  458 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   458  GRO
+vibration
+     1
+   457
+improper torsion
+ 0
+unit ntype qqatom
+  459 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   459  GRO
+vibration
+     2
+   412   460
+improper torsion
+ 0
+unit ntype qqatom
+  460 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   460  GRO
+vibration
+     1
+   459
+improper torsion
+ 0
+unit ntype qqatom
+  461 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   461  GRO
+vibration
+     2
+   229   234
+improper torsion
+ 0
+unit ntype qqatom
+  462 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   462  GRO
+vibration
+     2
+   329   330
+improper torsion
+ 0
+unit ntype qqatom
+  463 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   463  GRO
+vibration
+     2
+    67    68
+improper torsion
+ 0
+unit ntype qqatom
+  464 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   464  GRO
+vibration
+     2
+   367   465
+improper torsion
+ 0
+unit ntype qqatom
+  465 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   465  GRO
+vibration
+     1
+   464
+improper torsion
+ 0
+unit ntype qqatom
+  466 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   466  GRO
+vibration
+     2
+   416   467
+improper torsion
+ 0
+unit ntype qqatom
+  467 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   467  GRO
+vibration
+     1
+   466
+improper torsion
+ 0
+unit ntype qqatom
+  468 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   468  GRO
+vibration
+     2
+   233   238
+improper torsion
+ 0
+unit ntype qqatom
+  469 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   469  GRO
+vibration
+     2
+   309   310
+improper torsion
+ 0
+unit ntype qqatom
+  470 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   470  GRO
+vibration
+     2
+   319   320
+improper torsion
+ 0
+unit ntype qqatom
+  471 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   471  GRO
+vibration
+     2
+   288   337
+improper torsion
+ 0
+unit ntype qqatom
+  472 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   472  GRO
+vibration
+     2
+     6   473
+improper torsion
+ 0
+unit ntype qqatom
+  473 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   473  GRO
+vibration
+     1
+   472
+improper torsion
+ 0
+unit ntype qqatom
+  474 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   474  GRO
+vibration
+     2
+     7   475
+improper torsion
+ 0
+unit ntype qqatom
+  475 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   475  GRO
+vibration
+     1
+   474
+improper torsion
+ 0
+unit ntype qqatom
+  476 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   476  GRO
+vibration
+     2
+   408   477
+improper torsion
+ 0
+unit ntype qqatom
+  477 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   477  GRO
+vibration
+     1
+   476
+improper torsion
+ 0
+unit ntype qqatom
+  478 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   478  GRO
+vibration
+     2
+   407   479
+improper torsion
+ 0
+unit ntype qqatom
+  479 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   479  GRO
+vibration
+     1
+   478
+improper torsion
+ 0
+unit ntype qqatom
+  480 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   480  GRO
+vibration
+     2
+    20   481
+improper torsion
+ 0
+unit ntype qqatom
+  481 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   481  GRO
+vibration
+     1
+   480
+improper torsion
+ 0
+unit ntype qqatom
+  482 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   482  GRO
+vibration
+     2
+    69   483
+improper torsion
+ 0
+unit ntype qqatom
+  483 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   483  GRO
+vibration
+     1
+   482
+improper torsion
+ 0
+unit ntype qqatom
+  484 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   484  GRO
+vibration
+     2
+   113   485
+improper torsion
+ 0
+unit ntype qqatom
+  485 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   485  GRO
+vibration
+     1
+   484
+improper torsion
+ 0
+unit ntype qqatom
+  486 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   486  GRO
+vibration
+     2
+   118   487
+improper torsion
+ 0
+unit ntype qqatom
+  487 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   487  GRO
+vibration
+     1
+   486
+improper torsion
+ 0
+unit ntype qqatom
+  488 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   488  GRO
+vibration
+     2
+   268   317
+improper torsion
+ 0
+unit ntype qqatom
+  489 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   489  GRO
+vibration
+     2
+   207   490
+improper torsion
+ 0
+unit ntype qqatom
+  490 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   490  GRO
+vibration
+     1
+   489
+improper torsion
+ 0
+unit ntype qqatom
+  491 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   491  GRO
+vibration
+     2
+   208   492
+improper torsion
+ 0
+unit ntype qqatom
+  492 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   492  GRO
+vibration
+     1
+   491
+improper torsion
+ 0
+unit ntype qqatom
+  493 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   493  GRO
+vibration
+     2
+   286   287
+improper torsion
+ 0
+unit ntype qqatom
+  494 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   494  GRO
+vibration
+     2
+   384   387
+improper torsion
+ 0
+unit ntype qqatom
+  495 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   495  GRO
+vibration
+     2
+   352   401
+improper torsion
+ 0
+unit ntype qqatom
+  496 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   496  GRO
+vibration
+     2
+   189   194
+improper torsion
+ 0
+unit ntype qqatom
+  497 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   497  GRO
+vibration
+     2
+     5   372
+improper torsion
+ 0
+unit ntype qqatom
+  498 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   498  GRO
+vibration
+     2
+   160   209
+improper torsion
+ 0
+unit ntype qqatom
+  499 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   499  GRO
+vibration
+     2
+    40   500
+improper torsion
+ 0
+unit ntype qqatom
+  500 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   500  GRO
+vibration
+     1
+   499
+improper torsion
+ 0
+unit ntype qqatom
+  501 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   501  GRO
+vibration
+     2
+    89   502
+improper torsion
+ 0
+unit ntype qqatom
+  502 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   502  GRO
+vibration
+     1
+   501
+improper torsion
+ 0
+unit ntype qqatom
+  503 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   503  GRO
+vibration
+     2
+    12    61
+improper torsion
+ 0
+unit ntype qqatom
+  504 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   504  GRO
+vibration
+     2
+   145   150
+improper torsion
+ 0
+unit ntype qqatom
+  505 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   505  GRO
+vibration
+     2
+   409   410
+improper torsion
+ 0
+unit ntype qqatom
+  506 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   506  GRO
+vibration
+     2
+   259   260
+improper torsion
+ 0
+unit ntype qqatom
+  507 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   507  GRO
+vibration
+     2
+   102   508
+improper torsion
+ 0
+unit ntype qqatom
+  508 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   508  GRO
+vibration
+     1
+   507
+improper torsion
+ 0
+unit ntype qqatom
+  509 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   509  GRO
+vibration
+     2
+   103   510
+improper torsion
+ 0
+unit ntype qqatom
+  510 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   510  GRO
+vibration
+     1
+   509
+improper torsion
+ 0
+unit ntype qqatom
+  511 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   511  GRO
+vibration
+     2
+   123   512
+improper torsion
+ 0
+unit ntype qqatom
+  512 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   512  GRO
+vibration
+     1
+   511
+improper torsion
+ 0
+unit ntype qqatom
+  513 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   513  GRO
+vibration
+     2
+   124   514
+improper torsion
+ 0
+unit ntype qqatom
+  514 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   514  GRO
+vibration
+     1
+   513
+improper torsion
+ 0
+unit ntype qqatom
+  515 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   515  GRO
+vibration
+     2
+    24   516
+improper torsion
+ 0
+unit ntype qqatom
+  516 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   516  GRO
+vibration
+     1
+   515
+improper torsion
+ 0
+unit ntype qqatom
+  517 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   517  GRO
+vibration
+     2
+    73   518
+improper torsion
+ 0
+unit ntype qqatom
+  518 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   518  GRO
+vibration
+     1
+   517
+improper torsion
+ 0
+unit ntype qqatom
+  519 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   519  GRO
+vibration
+     2
+   253   520
+improper torsion
+ 0
+unit ntype qqatom
+  520 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   520  GRO
+vibration
+     1
+   519
+improper torsion
+ 0
+unit ntype qqatom
+  521 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   521  GRO
+vibration
+     2
+   258   522
+improper torsion
+ 0
+unit ntype qqatom
+  522 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   522  GRO
+vibration
+     1
+   521
+improper torsion
+ 0
+unit ntype qqatom
+  523 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   523  GRO
+vibration
+     2
+   389   524
+improper torsion
+ 0
+unit ntype qqatom
+  524 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   524  GRO
+vibration
+     1
+   523
+improper torsion
+ 0
+unit ntype qqatom
+  525 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   525  GRO
+vibration
+     2
+   394   526
+improper torsion
+ 0
+unit ntype qqatom
+  526 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   526  GRO
+vibration
+     1
+   525
+improper torsion
+ 0
+unit ntype qqatom
+  527 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   527  GRO
+vibration
+     2
+    70    71
+improper torsion
+ 0
+unit ntype qqatom
+  528 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   528  GRO
+vibration
+     2
+   284   333
+improper torsion
+ 0
+unit ntype qqatom
+  529 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   529  GRO
+vibration
+     2
+   281   530
+improper torsion
+ 0
+unit ntype qqatom
+  530 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   530  GRO
+vibration
+     1
+   529
+improper torsion
+ 0
+unit ntype qqatom
+  531 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   531  GRO
+vibration
+     2
+   282   532
+improper torsion
+ 0
+unit ntype qqatom
+  532 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   532  GRO
+vibration
+     1
+   531
+improper torsion
+ 0
+unit ntype qqatom
+  533 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   533  GRO
+vibration
+     2
+    10    11
+improper torsion
+ 0
+unit ntype qqatom
+  534 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   534  GRO
+vibration
+     2
+   134   135
+improper torsion
+ 0
+unit ntype qqatom
+  535 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   535  GRO
+vibration
+     2
+   243   244
+improper torsion
+ 0
+unit ntype qqatom
+  536 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   536  GRO
+vibration
+     2
+   311   537
+improper torsion
+ 0
+unit ntype qqatom
+  537 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   537  GRO
+vibration
+     1
+   536
+improper torsion
+ 0
+unit ntype qqatom
+  538 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   538  GRO
+vibration
+     2
+   312   539
+improper torsion
+ 0
+unit ntype qqatom
+  539 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   539  GRO
+vibration
+     1
+   538
+improper torsion
+ 0
+unit ntype qqatom
+  540 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   540  GRO
+vibration
+     2
+   291   292
+improper torsion
+ 0
+unit ntype qqatom
+  541 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   541  GRO
+vibration
+     2
+   220   269
+improper torsion
+ 0
+unit ntype qqatom
+  542 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   542  GRO
+vibration
+     2
+   247   543
+improper torsion
+ 0
+unit ntype qqatom
+  543 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   543  GRO
+vibration
+     1
+   542
+improper torsion
+ 0
+unit ntype qqatom
+  544 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   544  GRO
+vibration
+     2
+   248   545
+improper torsion
+ 0
+unit ntype qqatom
+  545 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   545  GRO
+vibration
+     1
+   544
+improper torsion
+ 0
+unit ntype qqatom
+  546 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   546  GRO
+vibration
+     2
+    85    90
+improper torsion
+ 0
+unit ntype qqatom
+  547 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   547  GRO
+vibration
+     2
+   112   548
+improper torsion
+ 0
+unit ntype qqatom
+  548 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   548  GRO
+vibration
+     1
+   547
+improper torsion
+ 0
+unit ntype qqatom
+  549 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   549  GRO
+vibration
+     2
+   161   550
+improper torsion
+ 0
+unit ntype qqatom
+  550 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   550  GRO
+vibration
+     1
+   549
+improper torsion
+ 0
+unit ntype qqatom
+  551 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   551  GRO
+vibration
+     2
+   139   140
+improper torsion
+ 0
+unit ntype qqatom
+  552 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   552  GRO
+vibration
+     2
+    82    83
+improper torsion
+ 0
+unit ntype qqatom
+  553 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   553  GRO
+vibration
+     2
+   315   364
+improper torsion
+ 0
+unit ntype qqatom
+  554 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   554  GRO
+vibration
+     2
+    49    50
+improper torsion
+ 0
+unit ntype qqatom
+  555 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   555  GRO
+vibration
+     2
+     1   368
+improper torsion
+ 0
+unit ntype qqatom
+  556 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   556  GRO
+vibration
+     2
+   266   267
+improper torsion
+ 0
+unit ntype qqatom
+  557 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   557  GRO
+vibration
+     2
+    99   558
+improper torsion
+ 0
+unit ntype qqatom
+  558 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   558  GRO
+vibration
+     1
+   557
+improper torsion
+ 0
+unit ntype qqatom
+  559 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   559  GRO
+vibration
+     2
+    98   560
+improper torsion
+ 0
+unit ntype qqatom
+  560 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   560  GRO
+vibration
+     1
+   559
+improper torsion
+ 0
+unit ntype qqatom
+  561 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   561  GRO
+vibration
+     2
+   413   562
+improper torsion
+ 0
+unit ntype qqatom
+  562 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   562  GRO
+vibration
+     1
+   561
+improper torsion
+ 0
+unit ntype qqatom
+  563 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   563  GRO
+vibration
+     2
+   414   564
+improper torsion
+ 0
+unit ntype qqatom
+  564 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   564  GRO
+vibration
+     1
+   563
+improper torsion
+ 0
+unit ntype qqatom
+  565 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   565  GRO
+vibration
+     2
+   239   566
+improper torsion
+ 0
+unit ntype qqatom
+  566 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   566  GRO
+vibration
+     1
+   565
+improper torsion
+ 0
+unit ntype qqatom
+  567 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   567  GRO
+vibration
+     2
+   240   568
+improper torsion
+ 0
+unit ntype qqatom
+  568 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   568  GRO
+vibration
+     1
+   567
+improper torsion
+ 0
+unit ntype qqatom
+  569 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   569  GRO
+vibration
+     2
+   222   570
+improper torsion
+ 0
+unit ntype qqatom
+  570 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   570  GRO
+vibration
+     1
+   569
+improper torsion
+ 0
+unit ntype qqatom
+  571 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   571  GRO
+vibration
+     2
+   223   572
+improper torsion
+ 0
+unit ntype qqatom
+  572 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   572  GRO
+vibration
+     1
+   571
+improper torsion
+ 0
+unit ntype qqatom
+  573 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   573  GRO
+vibration
+     2
+    60    63
+improper torsion
+ 0
+unit ntype qqatom
+  574 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   574  GRO
+vibration
+     2
+    94    95
+improper torsion
+ 0
+unit ntype qqatom
+  575 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   575  GRO
+vibration
+     2
+   270   576
+improper torsion
+ 0
+unit ntype qqatom
+  576 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   576  GRO
+vibration
+     1
+   575
+improper torsion
+ 0
+unit ntype qqatom
+  577 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   577  GRO
+vibration
+     2
+   271   578
+improper torsion
+ 0
+unit ntype qqatom
+  578 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   578  GRO
+vibration
+     1
+   577
+improper torsion
+ 0
+unit ntype qqatom
+  579 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   579  GRO
+vibration
+     2
+   175   176
+improper torsion
+ 0
+unit ntype qqatom
+  580 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   580  GRO
+vibration
+     2
+   241   246
+improper torsion
+ 0
+unit ntype qqatom
+  581 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   581  GRO
+vibration
+     2
+   381   386
+improper torsion
+ 0
+unit ntype qqatom
+  582 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   582  GRO
+vibration
+     2
+    38    39
+improper torsion
+ 0
+unit ntype qqatom
+  583 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   583  GRO
+vibration
+     2
+   403   404
+improper torsion
+ 0
+unit ntype qqatom
+  584 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   584  GRO
+vibration
+     2
+   235   585
+improper torsion
+ 0
+unit ntype qqatom
+  585 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   585  GRO
+vibration
+     1
+   584
+improper torsion
+ 0
+unit ntype qqatom
+  586 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   586  GRO
+vibration
+     2
+   232   587
+improper torsion
+ 0
+unit ntype qqatom
+  587 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   587  GRO
+vibration
+     1
+   586
+improper torsion
+ 0
+unit ntype qqatom
+  588 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   588  GRO
+vibration
+     2
+   170   171
+improper torsion
+ 0
+unit ntype qqatom
+  589 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   589  GRO
+vibration
+     2
+   184   187
+improper torsion
+ 0
+unit ntype qqatom
+  590 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   590  GRO
+vibration
+     2
+   151   591
+improper torsion
+ 0
+unit ntype qqatom
+  591 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   591  GRO
+vibration
+     1
+   590
+improper torsion
+ 0
+unit ntype qqatom
+  592 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   592  GRO
+vibration
+     2
+   152   593
+improper torsion
+ 0
+unit ntype qqatom
+  593 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   593  GRO
+vibration
+     1
+   592
+improper torsion
+ 0
+unit ntype qqatom
+  594 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   594  GRO
+vibration
+     2
+   305   306
+improper torsion
+ 0
+unit ntype qqatom
+  595 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   595  GRO
+vibration
+     2
+    92   141
+improper torsion
+ 0
+unit ntype qqatom
+  596 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   596  GRO
+vibration
+     2
+    19   597
+improper torsion
+ 0
+unit ntype qqatom
+  597 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   597  GRO
+vibration
+     1
+   596
+improper torsion
+ 0
+unit ntype qqatom
+  598 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   598  GRO
+vibration
+     2
+    18   599
+improper torsion
+ 0
+unit ntype qqatom
+  599 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   599  GRO
+vibration
+     1
+   598
+improper torsion
+ 0
+unit ntype qqatom
+  600 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   600  GRO
+vibration
+     2
+   280   283
+improper torsion
+ 0
+unit ntype qqatom
+  601 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   601  GRO
+vibration
+     2
+   199   200
+improper torsion
+ 0
+unit ntype qqatom
+  602 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   602  GRO
+vibration
+     2
+   185   186
+improper torsion
+ 0
+unit ntype qqatom
+  603 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   603  GRO
+vibration
+     2
+    43    44
+improper torsion
+ 0
+unit ntype qqatom
+  604 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   604  GRO
+vibration
+     2
+   108   605
+improper torsion
+ 0
+unit ntype qqatom
+  605 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   605  GRO
+vibration
+     1
+   604
+improper torsion
+ 0
+unit ntype qqatom
+  606 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   606  GRO
+vibration
+     2
+   157   607
+improper torsion
+ 0
+unit ntype qqatom
+  607 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   607  GRO
+vibration
+     1
+   606
+improper torsion
+ 0
+unit ntype qqatom
+  608 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   608  GRO
+vibration
+     2
+   168   609
+improper torsion
+ 0
+unit ntype qqatom
+  609 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   609  GRO
+vibration
+     1
+   608
+improper torsion
+ 0
+unit ntype qqatom
+  610 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   610  GRO
+vibration
+     2
+   217   611
+improper torsion
+ 0
+unit ntype qqatom
+  611 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   611  GRO
+vibration
+     1
+   610
+improper torsion
+ 0
+unit ntype qqatom
+  612 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   612  GRO
+vibration
+     2
+   380   383
+improper torsion
+ 0
+unit ntype qqatom
+  613 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   613  GRO
+vibration
+     2
+   129   130
+improper torsion
+ 0
+unit ntype qqatom
+  614 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   614  GRO
+vibration
+     2
+   197   615
+improper torsion
+ 0
+unit ntype qqatom
+  615 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   615  GRO
+vibration
+     1
+   614
+improper torsion
+ 0
+unit ntype qqatom
+  616 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   616  GRO
+vibration
+     2
+   202   617
+improper torsion
+ 0
+unit ntype qqatom
+  617 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   617  GRO
+vibration
+     1
+   616
+improper torsion
+ 0
+unit ntype qqatom
+  618 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   618  GRO
+vibration
+     2
+    21   619
+improper torsion
+ 0
+unit ntype qqatom
+  619 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   619  GRO
+vibration
+     1
+   618
+improper torsion
+ 0
+unit ntype qqatom
+  620 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   620  GRO
+vibration
+     2
+   388   621
+improper torsion
+ 0
+unit ntype qqatom
+  621 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   621  GRO
+vibration
+     1
+   620
+improper torsion
+ 0
+unit ntype qqatom
+  622 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   622  GRO
+vibration
+     2
+    48    97
+improper torsion
+ 0
+unit ntype qqatom
+  623 'OE'   -0.368
+pdbname aminonum aminoshort
+ 'OE'   623  GRO
+vibration
+     2
+   203   204
+improper torsion
+ 0
+unit ntype qqatom
+  624 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   624  GRO
+vibration
+     2
+   302   625
+improper torsion
+ 0
+unit ntype qqatom
+  625 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   625  GRO
+vibration
+     1
+   624
+improper torsion
+ 0
+unit ntype qqatom
+  626 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   626  GRO
+vibration
+     2
+   303   627
+improper torsion
+ 0
+unit ntype qqatom
+  627 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   627  GRO
+vibration
+     1
+   626
+improper torsion
+ 0
+unit ntype qqatom
+  628 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   628  GRO
+vibration
+     2
+   339   629
+improper torsion
+ 0
+unit ntype qqatom
+  629 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   629  GRO
+vibration
+     1
+   628
+improper torsion
+ 0
+unit ntype qqatom
+  630 'OH'   -0.661
+pdbname aminonum aminoshort
+ 'OH'   630  GRO
+vibration
+     2
+   340   631
+improper torsion
+ 0
+unit ntype qqatom
+  631 'HO'    0.398
+pdbname aminonum aminoshort
+ 'HO'   631  GRO
+vibration
+     1
+    630
+improper torsion
+ 0

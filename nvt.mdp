@@ -1,0 +1,73 @@
+; MCMD cycle trial with PME VDW
+
+; default leap frog algorithm with time step
+integrator               = md
+dt                       = 0.001
+nsteps                   = 100000
+
+; frequency of writing 
+; coordinates to trajectory file
+nstxout                  = 1000
+; velocities to trajectory file
+nstvout                  = 1000
+; energies to log file
+nstlog                   = 100
+; energies to energy file
+nstenergy                = 100
+; frequency for calculating energies
+nstcalcenergy            = 100
+; frequency for writing coordinates to compressed trajectory
+nstxtcout                = 100
+
+; groups written to energy file
+energygrps               = 1GRO SOL
+
+; frequency of neighbour list updating and neighbour list type and cutoff
+cutoff_scheme            = verlet
+ns-type                  = grid
+verlet-buffer-tolerance  = 0.001
+
+; walls and periodic boundary conditions
+pbc                      = xyz
+periodic-molecules	 = yes
+
+; electrostatics and cut off
+ewald-geometry           = 3d
+coulombtype              = PME
+rcoulomb                 = 1.2
+fourierspacing           = 0.12
+pme-order                = 4
+ewald_rtol               = 1e-5
+coulomb-modifier	 = None
+
+; cut off for VDWs interactions
+vdwtype                  = cut-off
+vdw_modifier             = potential-switch
+rvdw-switch              = 1.0
+rvdw                     = 1.2
+
+;vdwtype                  = PME
+;ewald-rtol-lj		 = 1e-3
+;lj-pme-comb-rule	 = Lorentz-Berthelot
+;vdw_modifier             = None
+;rvdw			 = 1.2
+
+; thermostat type, target temp. and relaxation times for each species
+tcoupl                   = nose-hoover
+tc-grps                  = System  
+tau-t                    = 1.0     
+ref-t                    = 300.00
+
+; random initial velocities from MB distribution at 300K
+gen-vel                  = no
+
+; Bond constraints
+constraints		 = h-bonds
+constraint-algorithm	 = LINCS
+continuation		 = no
+lincs-order		 = 4
+lincs-iter		 = 1
+lincs-warnangle		 = 30
+morse			 = no
+
+; END OF PULLING
