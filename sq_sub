@@ -47,7 +47,7 @@ do
 
 mkdir mc_"$iteration"
 
-cp towhee_output data_analysis/"$iteration".txt
+cp towhee_output data_analysis/T"$iteration".txt
 mv towhee_output mc_"$iteration"
 cp box* mc_"$iteration"
 
