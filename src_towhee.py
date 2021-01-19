@@ -50,7 +50,7 @@ for line in SOL_list:
 for line in enumerate(SOL_list):
 	count += 10000
 
-t = list((range(10000, count, 10000)))
+t = list((range(10000, count+10000, 10000)))
 
 # write collected data into one file for futher analysis
 
