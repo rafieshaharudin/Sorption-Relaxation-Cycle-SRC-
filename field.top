@@ -1,0 +1,32 @@
+; Graphene Oxide
+
+[ defaults ]
+; nbfunc        comb-rule       gen-pairs       fudgeLJ fudgeQQ
+  1             2               no              1.0     1.0
+
+[ atomtypes ]
+      ; name	mass 	 charge	  sigma(nm) epsilon(kJ/mol)
+       CA  CA  12.01100  0.0000 A  0.355005 0.29288
+       CH  CH  12.01100  0.0000 A  0.356359 0.13389
+       CE  CE  12.01100  0.0000 A  0.358141 0.23430
+       CC  CC  12.01100  0.0000 A  0.302906 0.41003
+       OH  OH  15.99900  0.0000 A  0.314487 0.80375
+       OE  OE  15.99900  0.0000 A  0.293997 0.41840
+       OC  OC  15.99900  0.0000 A  0.302906 0.50208
+       HA  HA  1.007941  0.0000 A  0.242003 0.12552
+       HO  HO  1.007941  0.0000 A  0.040001 0.19246
+ opls_111  OW  15.99940 -0.8300 A  0.318800 0.42677
+ opls_112  HW  1.007900  0.4150 A  0.000000 0.00000
+
+; Include Graphene Oxide topology
+#include "/mnt/iusers01/ceas01/mjki4ms3/gmx_reverseSRC/infinite_GO1.itp"
+
+; Include TIP3P-EW water topology
+#include "/mnt/iusers01/ceas01/mjki4ms3/gmx_reverseSRC/tip3pew.itp"
+
+[ system ]
+Graphene Oxide in water
+
+[ molecules ]
+1GRO     4
+SOL   299
