@@ -38,4 +38,10 @@ for i, j in zip(t_list, Z_list):
 
 f99.close()
 
+print("      ")
+print("******")
+print("DONE!!")
+print("******")
+print("      ")
+
 exit
