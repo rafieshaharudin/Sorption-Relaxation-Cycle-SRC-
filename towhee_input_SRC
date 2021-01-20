@@ -78,9 +78,9 @@ T
 rmin  
 1.0d0 
 rcut  
-10.0d0
+12.0d0
 rcutin 
-12.0d0 		      # lower chempot system will swell, the cut-off is fine. for shrinking system need to reduce cut-off distance to prevent error mid cycles
+10.0d0 		      # lower chempot system will swell, the cut-off is fine. for shrinking system need to reduce cut-off distance to prevent error mid cycles
 electrostatic_form
 'coulomb'
 coulombstyle
