@@ -59,4 +59,10 @@ for i, j, k, l in zip(t, Ener, Pres, N_water):
 
 f99.close()
 
+print("      ")
+print("******")
+print("DONE!!")
+print("******")
+print("      ")
+
 exit
