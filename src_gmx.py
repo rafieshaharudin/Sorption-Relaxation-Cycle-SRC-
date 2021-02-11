@@ -14,9 +14,10 @@ Z_list = []
 t_list = []
 count = 0
 
-# find file in  directory that ends with ".xvg" and sort in correct sequence (require correct address location)
+# find file in  directory that ends with ".xvg" and sort in correct sequence (require correct address location' '.' is for cwd)
 
-for filename in os.listdir('/mnt/iusers01/ceas01/mjki4ms3/scratch-new/reverse_SRC/SRC_minim/highRH/cont_500_cycles/data_analysis'):
+#for filename in os.listdir('.'):		
+for filename in os.listdir(os.getcwd()):	# os.getcwd() gives the path address for cwd where this code is executed
 	if filename.endswith('.xvg'):
 		file_list.append(filename)
 		new_list = Tcl().call('lsort', '-dict', file_list)
