@@ -1,5 +1,5 @@
 # note: Edited to update the dimension of box in X and Y every new MC cycle
-# note: Last edited on 8/1/2020 17:55
+
 
 import os
 
