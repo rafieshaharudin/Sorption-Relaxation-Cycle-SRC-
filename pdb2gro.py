@@ -1,3 +1,5 @@
+# Aim : To convert .pdb file from MC to .gro file for MD
+
 f1 = open('box_01_step_00000000010000.pdb').readlines()[:-2] ### SKIP 2 LINES AT THE END OF .pdb FILE ###
 f2 = open('towhee_input').readlines()[35:38] ### READ BOX DIMENSION (NEED TO ENSURE CONSISTENCY IN towhee_input FILE) ###
 f9 = open('input.gro', 'w')
