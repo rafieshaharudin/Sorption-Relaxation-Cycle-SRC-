@@ -1,4 +1,4 @@
-; SRC cycle minimisation
+; MCMD cycle minimisation
 
 ; default leap frog algorithm with time step
 integrator               = steep
