@@ -1,4 +1,4 @@
-# Aim : To compile number of water molecules from each MD SRC cycle
+# Aim : To compile Z box evolutiun from each MD SRC cycle
 
 import os
 from tkinter import Tcl
