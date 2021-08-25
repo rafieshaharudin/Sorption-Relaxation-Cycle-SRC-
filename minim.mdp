@@ -1,5 +1,4 @@
-; can define flexible water instead of rigid here, or add restraints
-define                   = -DPOSRES
+; SRC cycle minimisation
 
 ; default leap frog algorithm with time step
 integrator               = steep
