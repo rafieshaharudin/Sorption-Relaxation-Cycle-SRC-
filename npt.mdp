@@ -1,4 +1,4 @@
-; MCMD cycle npt.mdp
+; MCMD cycle NPT
 ; default leap frog algorithm with time step
 integrator               = md
 dt                       = 0.001
