@@ -90,8 +90,6 @@ mkdir md_"$iteration"
 ipython gro2coord_accurate.py
 ipython xyz_update_input.py
 
-## NEED TO DO SOMETHING FOR gmx_energy AND GET ZBOX ANALYSIS EACH CYCLE
-
 # run gmx energy to get box height in Z 
 
 echo 16 0 | gmx_d energy -f output_npt.edr -o Z"$iteration"
