@@ -1,4 +1,4 @@
-; MCMD cycle trial with PME VDW
+; MCMD cycle NVT
 
 ; default leap frog algorithm with time step
 integrator               = md
